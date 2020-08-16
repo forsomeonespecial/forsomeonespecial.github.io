@@ -9734,6 +9734,13 @@ textarea.form-control {
   animation: loader-dash 1.5s ease-in-out infinite;
   stroke-linecap: round; }
 
+.messagename{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 0;
+    color: #000000!important;
+  }
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);

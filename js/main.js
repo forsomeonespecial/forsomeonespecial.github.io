@@ -3,32 +3,38 @@
  	easing: 'slide'
  });
 
-//$(document).ready(function() {
-//    //These things should occur on page load:
-//   //  $(".before-bday").hide();  
-//    var endTime = new Date("17 August 2020 00:00:00 UTC+05:30");			
-//		endTime = (Date.parse(endTime) / 1000);
-//
-//		var now = new Date();
-//		now = (Date.parse(now) / 1000);
-//
-//		var timeLeft = endTime - now;
-//    
-//    if(timeLeft == 0){
-//       $(".before-bday").show();  
-//       $(".before-bday-text").text('Happy Birthday');
-//    }
-//    else if(timeLeft < 0){
-//        $(".before-bday").show(); 
-//        $(".before-bday-text").text('');
-//    }
-//    else{
-//        $(".before-bday").hide();  
-//         $(".before-bday-text").text('Birthday Countdown');
-//    }
-//
-//    
-//});
+$(document).ready(function() {
+   //These things should occur on page load:
+  //  $(".before-bday").hide();  
+   var endTime = new Date("17 August 2020 00:00:00 UTC+05:30");			
+		endTime = (Date.parse(endTime) / 1000);
+
+		var now = new Date();
+		now = (Date.parse(now) / 1000);
+
+		var timeLeft = endTime - now;
+   
+   if(timeLeft == 0){
+      $(".before-bday").show();  
+      $(".before-bday-text").text('Happy Birthday');
+   }
+   else if(timeLeft > -86401 && timeLeft < 0){
+       $(".before-bday").show(); 
+	   $(".before-bday-text").text('Happy Birthday');
+	   $("#timer").text('');
+   }
+   else if(timeLeft > 0){
+       $(".before-bday").hide();  
+        $(".before-bday-text").text('Birthday Countdown');
+   }
+   else{
+	$(".before-bday").show(); 
+	$(".before-bday-text").text('');
+	$("#timer").text('');
+   }
+
+   
+});
             
 
 (function($) {
